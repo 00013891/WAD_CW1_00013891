@@ -21,6 +21,7 @@ namespace DataAccessLayer_00013891.Repository
             var exercsise = _context.Exercises.First(e => e.Id == workout.Exercise.Id);
             workout.Exercise = exercsise;
             _context.Workouts.Add(workout);
+            _context.SaveChanges();
         }
 
         public void DeleteWorkout(int id)
@@ -33,12 +34,14 @@ namespace DataAccessLayer_00013891.Repository
         public Workout EditWorkout(int id, Workout workout)
         {
             var workoutToEdit = GetWorkoutById(id)!;
+            var exercsise = _context.Exercises.First(e => e.Id == workout.Exercise.Id);
 
             _context.Entry(workoutToEdit).State = EntityState.Modified;
             workoutToEdit.WorkoutDate = workout.WorkoutDate;
             workoutToEdit.DurationInMinutes = workout.DurationInMinutes;
-            workoutToEdit.Exercise = workout.Exercise;
+            workoutToEdit.Exercise = exercsise;
 
+            _context.SaveChanges();
             return GetWorkoutById(id)!;
         }
 
