@@ -8,10 +8,10 @@ namespace DataAccessLayer_00013891.Repository
 {
     public interface IExerciseRepository
     {
-        Task<Exercise> GetExerciseById(int id);
-        Task<List<Exercise>> GetExercises();
-        Task<Exercise> CreateExercise(Exercise exercise);
-        Task<Exercise> EditExercise(int id, Exercise exercise);
-        Task DeleteExercise(int id);
+        Exercise? GetExerciseById(int id);
+        List<Exercise> GetExercises();
+        void CreateExercise(Exercise exercise);
+        Exercise EditExercise(int id, Exercise exercise);
+        void DeleteExercise(int id);
     }
 }

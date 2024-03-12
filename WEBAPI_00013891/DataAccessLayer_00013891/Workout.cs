@@ -11,5 +11,6 @@ namespace DataAccessLayer_00013891
         public int Id { get; set; }
         public int DurationInMinutes { get; set; }
         public DateTime WorkoutDate { get; set; } = DateTime.Now;
+        public Exercise Exercise { get; set; }
     }
 }
