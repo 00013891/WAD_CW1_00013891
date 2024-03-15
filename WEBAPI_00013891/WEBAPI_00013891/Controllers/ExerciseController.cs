@@ -34,11 +34,16 @@ namespace WEBAPI_00013891.Controllers
         {
             try
             {
-                return Ok(_exerciseRepository.GetExerciseById(id));
+                var exercise = _exerciseRepository.GetExerciseById(id);
+                if(exercise == null)
+                {
+                    return NotFound();
+                }
+                return Ok(exercise);
             }
-            catch (Exception)
+            catch (Exception e)
             {
-                return NotFound();
+                return BadRequest(e.Message);
             }
         }
 

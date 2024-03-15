@@ -1,0 +1,19 @@
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Duration</th>
+        <th>Date</th>
+        <th>Exercise</th>
+    </tr>
+    @for(workout of workouts; track $index){
+        <tr>
+            <td>{{workout.id}}</td>
+            <td>{{workout.durationInMinutes}}m.</td>
+            <td>{{workout.workoutDate}}</td>
+            <td>{{workout.exercise.exerciseName}}</td>
+            <td>
+                <a [routerLink]="['/edit-workout', workout.id]">Edit</a> | <a [routerLink]="['/delete-workout', workout.id]">Delete</a>
+            </td>
+        </tr>
+    }
+</table>

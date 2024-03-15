@@ -1,0 +1,16 @@
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Exercise</th>
+        <th>Buttons</th>
+    </tr>
+    @for(exercise of exercises; track $index){
+        <tr>
+            <td>{{exercise.id}}</td>
+            <td>{{exercise.exerciseName}}</td>
+            <td>
+                <a [routerLink]="['/edit-exercise', exercise.id]">Edit</a> | <a [routerLink]="['/delete-exercise', exercise.id]">Delete</a>
+            </td>
+        </tr>
+    }
+</table>
