@@ -1,1 +1,5 @@
-<p>create-exercise works!</p>
+<form (ngSubmit)="createExercise(); $event.preventDefault()">
+    <label for="exerciseName">Name</label>
+    <input priority="text" name="exerciseName" [(ngModel)]="exercise.exerciseName" required/>
+    <button priority="submit">Submit</button>
+</form>

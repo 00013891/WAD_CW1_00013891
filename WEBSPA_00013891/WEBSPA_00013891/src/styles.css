@@ -9,4 +9,35 @@ th, td {
     text-align: left;
     padding: 16px;
 }
-  
+
+input, select, option {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 3px solid #ccc;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  outline: none;
+}
+
+
+input:focus {
+  border: 3px solid #555;
+}
+
+button{
+  float: left;
+  background-color: #7affa6;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  transition: 0.5s;
+  font-size: 17px;
+}
+
+button:hover {
+  background-color: #fff;
+  color: black;
+  cursor: pointer;
+}
