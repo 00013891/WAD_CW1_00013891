@@ -1,1 +1,13 @@
-<p>edit-workout works!</p>
+<form (ngSubmit)="editWorkout(workout); $event.preventDefault()">
+    <label for="durationInMinutes">Duration (in minutes)</label>
+    <input priority="text" type="number" name="durationInMinutes" [(ngModel)]="workout.durationInMinutes" required/>
+    
+    <label for="workoutDate">Workout Date</label>
+    <input priority="text" type="date" name="workoutDate" [(ngModel)]="workout.workoutDate" required/>
+
+    <label for="exercise">Exercise</label>
+    <select class="form-control" id="exercise" name="Exercise" [(ngModel)]="workout.exercise">
+        <option *ngFor="let exercise of exercises" [ngValue]="exercise">{{exercise.exerciseName}}</option>
+    </select>
+    <button priority="submit">Submit</button>
+</form>
